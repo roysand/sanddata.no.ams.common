@@ -1,0 +1,1 @@
+# sanddata.no.ams.common
