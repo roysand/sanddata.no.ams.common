@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+        <EnableDefaultItems>false</EnableDefaultItems>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <IsPackable>true</IsPackable>
+        <PackageOutputPath>.</PackageOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="**\*" Exclude="**\bin\**\*;**\obj\**\*;*.nupkg" />
+        <Compile Remove="**\*" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <PackageType>Dependency</PackageType>
+        <Version>1.0.0</Version>
+        <PackageId>sanddata.no.ams.common</PackageId>
+        <Title>Sanddata AMS Common</Title>
+        <Company>Sanddata</Company>
+        <Authors>Roy Sand</Authors>
+        <Copyright>Sanddata © 2024</Copyright>
+        <Description>DataLayer for Sanddata.no AMS</Description>
+        <PackageTags>c#;asp.net;core</PackageTags>
+        <PackageCopyright>Sanddata © 2024</PackageCopyright>
+        <PackageProjectUrl>https://github.com/roysand/sanddata.no.ams.common.git</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/roysand/sanddata.no.ams.common.git</RepositoryUrl>
+    </PropertyGroup>
+</Project>
