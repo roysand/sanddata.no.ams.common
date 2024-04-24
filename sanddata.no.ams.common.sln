@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sanddata.no.ams.common.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sanddata.no.ams.common.Infrastructure", "src\sanddata.no.ams.common.Infrastructure\sanddata.no.ams.common.Infrastructure.csproj", "{8C5E945D-0293-45DF-958B-D1FAFF518C74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sanddata.no.ams.common.Application", "src\sanddata.no.ams.common.Application\sanddata.no.ams.common.Application.csproj", "{63154326-6EA8-4F75-A8EA-8117393A5AC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,7 +28,14 @@ Global
 		{8C5E945D-0293-45DF-958B-D1FAFF518C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C5E945D-0293-45DF-958B-D1FAFF518C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C5E945D-0293-45DF-958B-D1FAFF518C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63154326-6EA8-4F75-A8EA-8117393A5AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63154326-6EA8-4F75-A8EA-8117393A5AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63154326-6EA8-4F75-A8EA-8117393A5AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63154326-6EA8-4F75-A8EA-8117393A5AC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{26D7D35C-4567-44B5-86B7-F8FC98D39CE4} = {4C83F1EC-18AD-49D6-8F48-6BDF005F89F3}
+		{8C5E945D-0293-45DF-958B-D1FAFF518C74} = {4C83F1EC-18AD-49D6-8F48-6BDF005F89F3}
+		{63154326-6EA8-4F75-A8EA-8117393A5AC9} = {4C83F1EC-18AD-49D6-8F48-6BDF005F89F3}
 	EndGlobalSection
 EndGlobal

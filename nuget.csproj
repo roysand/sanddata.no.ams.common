@@ -12,13 +12,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="**\*" Exclude="**\bin\**\*;**\obj\**\*;*.nupkg" />
+        <Content Include="src\*" Exclude="**\bin\**\*;**\obj\**\*;*.nupkg" />
         <Compile Remove="**\*" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="src\sanddata.no.ams.common.Application\sanddata.no.ams.common.Application.csproj" />
+        <ProjectReference Include="src\sanddata.no.ams.common.Domain\sanddata.no.ams.common.Domain.csproj" />
+        <ProjectReference Include="src\sanddata.no.ams.common.Infrastructure\sanddata.no.ams.common.Infrastructure.csproj" />
     </ItemGroup>
 
     <PropertyGroup>
         <PackageType>Dependency</PackageType>
-        <Version>1.0.1</Version>
+        <Version>1.0.2</Version>
         <PackageId>sanddata.no.ams.common</PackageId>
         <Title>Sanddata AMS Common</Title>
         <Company>Sanddata</Company>
