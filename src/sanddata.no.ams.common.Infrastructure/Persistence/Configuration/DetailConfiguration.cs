@@ -8,14 +8,15 @@ public class DetailConfiguration : IEntityTypeConfiguration<Detail>
 {
     public void Configure(EntityTypeBuilder<Detail> builder)
     {
-        builder
-            .HasNoKey()
-            .ToTable("detail");
+        builder.HasKey(e => e.Id).HasName("detail_pk");
+
+        builder.ToTable("detail");
 
         builder.HasIndex(e => e.TimeStamp, "IX_Detail_TimeStamp");
 
         builder.HasIndex(e => new { e.ObisCodeId, e.TimeStamp }, "nci_wi_detail_99F2D155AA826D3C5CC127D4720BFE87");
 
+        builder.Property(e => e.Id).ValueGeneratedNever();
         builder.Property(e => e.Location)
             .HasMaxLength(50)
             .IsUnicode(false);

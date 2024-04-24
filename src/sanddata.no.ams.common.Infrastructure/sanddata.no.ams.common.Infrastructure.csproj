@@ -18,6 +18,11 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\sanddata.no.ams.common.Application\sanddata.no.ams.common.Application.csproj" />
       <ProjectReference Include="..\sanddata.no.ams.common.Domain\sanddata.no.ams.common.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Interface\" />
     </ItemGroup>
 </Project>

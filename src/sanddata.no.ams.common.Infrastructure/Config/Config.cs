@@ -1,19 +1,19 @@
 ﻿using Microsoft.Extensions.Configuration;
+using sanddata.no.ams.common.Application.Interfaces;
 using sanddata.no.ams.common.Domain.Common.Exceptions;
-using sanddata.no.ams.common.Infrastructure.Interface;
 
-namespace sanddata.no.ams.common.Infrastructure;
+namespace sanddata.no.ams.common.Infrastructure.Config;
 
-public class ConfigDataLayer : IConfigDataLayer
+public class Config : IConfig
 {
     private readonly IConfiguration _configuration;
-    public IApplicationSettingsConfigDataLayer ApplicationSettingsConfigDataLayer { get; }
+    public IApplicationSettingsConfig ApplicationSettingsConfig { get; }
 
-    public ConfigDataLayer(IConfiguration configuration)
+    public Config(IConfiguration configuration)
     {
         _configuration = configuration;
         
-        ApplicationSettingsConfigDataLayer = new ApplicationSettingsConfigDataLayer(this);
+        ApplicationSettingsConfig = new ApplicationSettingsConfig(this);
     }
     
     public T GetConfigValue<T>(string configKey, bool mustExist = true)

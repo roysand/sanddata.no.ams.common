@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using sanddata.no.ams.common.Application.Interfaces;
 using sanddata.no.ams.common.Domain.Entities;
-using sanddata.no.ams.common.Infrastructure.Interface;
 
 namespace sanddata.no.ams.common.Infrastructure.Persistence;
 
-public partial class ApplicationDbContextDataLayer(
-    IConfigDataLayer configDataLayer,
+public partial class ApplicationDbContext(
+    IConfig config,
     ILoggerFactory loggerFactory)
-    : DbContext, IApplicationDbContextDataLayer
+    : DbContext, IApplicationDbContext
 {
     public DbSet<RawData> RawSet { get; set; } = null!;
     public DbSet<Detail> DetailSet { get; set; } = null!;
@@ -30,7 +30,7 @@ public partial class ApplicationDbContextDataLayer(
         if (!optionsBuilder.IsConfigured)
         {
             var connectionString =
-                configDataLayer.ApplicationSettingsConfigDataLayer.DbConnectionString();
+                config.ApplicationSettingsConfig.DbConnectionString();
             optionsBuilder.UseSqlServer(connectionString,
                     opts => opts.CommandTimeout(sqlTimeout))
                 .EnableSensitiveDataLogging(true)

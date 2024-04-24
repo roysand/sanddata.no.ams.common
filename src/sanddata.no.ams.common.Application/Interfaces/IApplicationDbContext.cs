@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using sanddata.no.ams.common.Domain.Entities;
 
-namespace sanddata.no.ams.common.Infrastructure.Interface;
+namespace sanddata.no.ams.common.Application.Interfaces;
 
-public interface IApplicationDbContextDataLayer
+public interface IApplicationDbContext
 {
     DbSet<RawData> RawSet { get; set; }
     DbSet<Detail> DetailSet { get; set; }

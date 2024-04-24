@@ -8,9 +8,9 @@ public class DayConfiguration : IEntityTypeConfiguration<Day>
 {
     public void Configure(EntityTypeBuilder<Day> builder)
     {
-        builder
-            .HasNoKey()
-            .ToTable("day");
+        builder.HasKey(e => new { e.Date, e.Location }).HasName("day_pk");
+
+        builder.ToTable("day");
 
         builder.HasIndex(e => e.Date, "IX_Day_Date");
 
