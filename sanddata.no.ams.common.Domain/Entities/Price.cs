@@ -1,20 +1,30 @@
-﻿
-using DataLayer.Domain.Common;
+﻿using sanddata.no.ams.common.Domain.Common.Entities;
 
-namespace DataLayer.Domain.Entities;
+namespace sanddata.no.ams.common.Domain.Entities;
 
     public class Price : AuditableEntity
     {
         public Guid PriceId { get; set; }
+
         public DateTime PricePeriod { get; set; }
-        public string Location { get; set; }
-        public string Currency { get; set; }
-        public string Unit { get; set; }
-        public decimal Average { get; set; }
-        public decimal Max { get; set; }
+
+        public DateTime Modified { get; set; }
+
+        public string Location { get; set; } = null!;
+
+        public string Currency { get; set; } = null!;
+
+        public string Unit { get; set; } = null!;
+
+        public decimal? Average { get; set; }
+
+        public decimal? Max { get; set; }
+
         public decimal Min { get; set; }
-        public string InDomain { get; set; }
-        public string OutDomain { get; set; }
+
+        public string InDomain { get; set; } = null!;
+
+        public string OutDomain { get; set; } = null!;
 
         public List<PriceDetail> PriceDetailList { get; private set; }
 

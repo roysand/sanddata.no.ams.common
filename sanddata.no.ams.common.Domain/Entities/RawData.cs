@@ -1,11 +1,15 @@
-﻿namespace DataLayer.Domain.Entities;
+﻿namespace sanddata.no.ams.common.Domain.Entities;
 
 public class RawData
 {
     public Guid MeasurementId { get; set; }
+
     public DateTime TimeStamp { get; set; }
-    public string Raw { get; set; } = string.Empty;
-    public string Location { get; set; } = string.Empty;
+
+    public string Location { get; set; } = null!;
+
+    public string Raw1 { get; set; } = null!;
+
     public bool IsNew { get; set; }
 
     public RawData()
