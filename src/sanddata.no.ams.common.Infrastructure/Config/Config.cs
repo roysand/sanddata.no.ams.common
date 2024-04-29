@@ -21,7 +21,7 @@ public class Config : IConfig
         try
         {
             var configValue = _configuration.GetValue<T>(configKey);
-            if (EqualityComparer<T>.Default.Equals(configValue, default(T)))
+            if (EqualityComparer<T>.Default.Equals(configValue, default(T)) && mustExist)
             {
                 throw new ConfigException($"Config value '{configKey}' is missing");    
             }

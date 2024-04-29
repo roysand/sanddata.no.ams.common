@@ -31,9 +31,10 @@ public partial class ApplicationDbContext(
         {
             var connectionString =
                 config.ApplicationSettingsConfig.DbConnectionString();
+            
             optionsBuilder.UseSqlServer(connectionString,
                     opts => opts.CommandTimeout(sqlTimeout))
-                .EnableSensitiveDataLogging(true)
+                .EnableSensitiveDataLogging(config.ApplicationSettingsConfig.EnableSensitiveDataLogging())
                 .EnableDetailedErrors(true)
                 .UseLoggerFactory(loggerFactory);
         }

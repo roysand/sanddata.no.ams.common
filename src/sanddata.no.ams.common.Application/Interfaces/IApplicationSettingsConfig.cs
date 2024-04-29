@@ -3,4 +3,5 @@
 public interface IApplicationSettingsConfig
 {
     string DbConnectionString();
+    bool EnableSensitiveDataLogging();
 }

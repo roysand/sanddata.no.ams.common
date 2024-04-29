@@ -18,4 +18,9 @@ public class ApplicationSettingsConfig : IApplicationSettingsConfig
         return _config.GetConfigValue<string>($"{ConfigParentKey}:{MethodBase.GetCurrentMethod()!.Name}");
 
     }
+
+    public bool EnableSensitiveDataLogging()
+    {
+        return _config.GetConfigValue<bool>($"{ConfigParentKey}:{MethodBase.GetCurrentMethod()!.Name}", false);
+    }
 }
